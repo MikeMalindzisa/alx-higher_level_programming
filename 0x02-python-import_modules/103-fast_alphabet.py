@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import string; __import__('sys').stdout.write(string.ascii_uppercase + '\n')
+import string; (lambda s: [__import__('sys').stdout.write(s[i]) for i in range(len(s))])(string.ascii_uppercase + '\n')
