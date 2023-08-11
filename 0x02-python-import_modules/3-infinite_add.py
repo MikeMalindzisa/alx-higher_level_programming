@@ -9,4 +9,4 @@ if __name__ == "__main__":
         print(0)
     else:
         total_sum = sum(int(arg) for arg in arguments)
-        print(total_sum)
+        print("{}".format(total_sum))
