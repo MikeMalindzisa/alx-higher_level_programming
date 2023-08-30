@@ -17,7 +17,8 @@ class Square:
 
         Args:
             size (int): The size of the square's side. Default is 0.
-            position (tuple): The position of the square's top-left corner. Default is (0, 0).
+            position (tuple): The position of the square's top-left
+                            corner. Default is (0, 0).
         """
         self.size = size
         self.position = position
@@ -70,7 +71,8 @@ class Square:
         """Sets the position of the square's top-left corner.
 
         Args:
-            value (tuple): The new position as a tuple of two positive integers.
+            value (tuple): The new position as a tuple of two
+                            positive integers.
 
         Raises:
             TypeError: If value is not a tuple of two positive integers.
