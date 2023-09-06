@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class LockedClass:
     """
     A class that restricts the creation of instance attributes, allowing only 'first_name' to be set.
