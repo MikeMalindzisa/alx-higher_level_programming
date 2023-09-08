@@ -1,99 +1,46 @@
-# Import the function:
->>> add_integer = __import__('0-add_integer').add_integer
+Test 0-add_integer function
 
-# Test cases for add_integer function
+Tests for a function that adds two integers.
 
-# Test case 1: Adding two integers
->>> add_integer(1, 2)
-3
+Import the function:
 
-# Test case 2: Adding two integers with one negative
->>> add_integer(100, -2)
-98
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-# Test case 3: Adding an integer and a single integer argument
->>> add_integer(2)
-100
+Test Case 1: Add Two Positive Integers
 
-# Test case 4: Adding two floats that need to be cast to integers
->>> add_integer(3.7, 2.9)
-6
+    >>> add_integer(1, 1)
+    2
 
-# Test case 5: Adding two floats where one needs to be cast to an integer
->>> add_integer(5.0, 2.5)
-7
+Test Case 2: Add Two Negative Integers
 
-# Test case 6: Adding zero to an integer
->>> add_integer(0, 42)
-42
+    >>> add_integer(-1, -1)
+    -2
 
-# Test case 7: Adding two large integers
->>> add_integer(1000000, 2000000)
-3000000
+Test Case 3: Add a Positive Integer and a Negative Float
 
-# Test case 8: Adding two negative integers
->>> add_integer(-5, -7)
--12
+    >>> add_integer(5.5, -1)
+    4
 
-# Test case 9: Adding a negative integer and a positive integer
->>> add_integer(-8, 3)
--5
+Test Case 4: Error - String in `a` Argument
 
-# Test case 10: Adding a negative float and a negative integer (casting required)
->>> add_integer(-5.5, -2)
--7
+    >>> add_integer("Code", 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
-# Test case 11: Adding a negative float and a positive float (casting required)
->>> add_integer(-3.2, 2.9)
--1
+Test Case 5: Error - String in `b` Argument
 
-# Test case 12: Adding a negative integer and zero
->>> add_integer(-10, 0)
--10
+    >>> add_integer(2, "Eat")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
 
-# Test case 13: Adding zero to a negative integer
->>> add_integer(0, -42)
--42
+Test Case 6: Error - String in Both Arguments
 
-# Test cases for different argument scenarios with add_integer function
+    >>> add_integer("Sleep", "Repeat")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
-# Test case 14: Adding two integer arguments with no default value
->>> add_integer(10, 5)
-15
+pycodestyle Style Check:
 
-# Test case 15: Adding a single integer argument with no default value
->>> add_integer(7)
-105
-
-# Test case 16: Adding two floats with no default value (casting required)
->>> add_integer(3.2, 1.8)
-5
-
-# Test case 17: Adding a single float argument with no default value (casting required)
->>> add_integer(9.7)
-107
-
-# Test case 18: Adding two string arguments (TypeError should be raised)
->>> add_integer("Hello", "World")
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or b must be an integer
-
-# Test case 19: Adding a string and an integer argument (TypeError should be raised)
->>> add_integer("Python", 3)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or b must be an integer
-
-# Test case 20: Adding a list and a float argument (TypeError should be raised)
->>> add_integer([1, 2, 3], 3.5)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or b must be an integer
-
-# Test case 21: Adding a dictionary and a string argument (TypeError should be raised)
->>> add_integer({"key": "value"}, "string")
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or b must be an integer
-
+    >>> import os
+    >>> os.popen("pycodestyle 0-add_integer.py").read()
+    ''

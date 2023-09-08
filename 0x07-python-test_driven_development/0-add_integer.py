@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Define function add_integer."""
 
 
 def add_integer(a, b=98):
@@ -28,4 +29,3 @@ def add_integer(a, b=98):
     if ((type(b) != int) and (type(b) != float)):
         raise TypeError("b must be an integer")
     return int(a) + int(b)
-
