@@ -8,6 +8,7 @@ def lookup(obj):
         obj: The object to inspect.
 
     Returns:
-        A list of strings representing the attributes and methods of the object.
+        A list of strings representing the attributes and
+        methods of the object.
     """
     return dir(obj)
