@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import json
+from json import loads as str_load
 
 """
 This module defines a function to parse a JSON string and
@@ -18,4 +18,4 @@ def from_json_string(my_str):
     Returns:
         object: The Python data structure represented by the JSON string.
     """
-    return json.loads(my_str)
+    return str_load(my_str)
