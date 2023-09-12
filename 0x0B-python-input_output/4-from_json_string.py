@@ -18,4 +18,4 @@ def from_json_string(my_str):
     Returns:
         object: The Python data structure represented by the JSON string.
     """
-    return str_load(my_str)
+    return (str_load(my_str))
