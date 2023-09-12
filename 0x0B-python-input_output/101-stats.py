@@ -24,7 +24,8 @@ line_count = 0
 
 def print_metrics(metrics):
     """
-    Print the computed metrics.
+    Print the computed metrics containing status codes
+    that have been seen at least once.
 
     Args:
         metrics (dict): A dictionary containing the metrics.
@@ -32,7 +33,7 @@ def print_metrics(metrics):
     print("File size: {:d}".format(metrics["total_size"]))
     for status_code in sorted(metrics["status_codes"]):
         count = metrics["status_codes"][status_code]
-        if count > 0:  # Only print status codes that have appeared
+        if count > 0:
             print("{:s}: {:d}".format(status_code, count))
 
 
@@ -52,4 +53,3 @@ except Exception:
     pass
 finally:
     print_metrics(metrics)
-
