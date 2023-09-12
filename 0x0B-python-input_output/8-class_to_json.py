@@ -20,12 +20,4 @@ def class_to_json(obj):
     Returns:
         dict: A dictionary representation of the object.
     """
-    obj_dict = {}
-
-    for attr_name in dir(obj):
-        attr_value = getattr(obj, attr_name)
-
-        if isinstance(attr_value, (list, dict, str, int, bool)):
-            obj_dict[attr_name] = attr_value
-
-    return obj_dict
+    return obj.__dict__
