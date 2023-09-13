@@ -17,7 +17,7 @@ class Rectangle(BaseGeometry):
 
     Methods:
         __init__(self, width, height): Initializes a Rectangle instance
-        with width and height.  
+        with width and height.
     """
 
     def __init__(self, width, height):
