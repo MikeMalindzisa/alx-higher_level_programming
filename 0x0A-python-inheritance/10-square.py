@@ -29,14 +29,6 @@ class Square(Rectangle):
             TypeError: If size is not an integer.
             ValueError: If size is less than or equal to 0.
         """
-        Rectangle.__init__(self, size, size)
-
-    def __str__(self):
-        """
-        Return a string representation of the square.
-
-        Returns:
-            str: A string in the format [Square] <size>/<size>.
-        """
-        return "[Square] {}/{}".format(
-            self._Rectangle__width, self._Rectangle__height)
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
