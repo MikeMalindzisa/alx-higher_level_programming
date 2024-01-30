@@ -1,0 +1,82 @@
+Tests for a function that multiplies 2 matrices by using the module NumPy
+
+Import the function:
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+    
+Test Case 1: Optimal Pair of Lists
+
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    array([[ 7, 10],
+           [15, 22]])
+
+Test Case 2: Optimal Pair of Lists (Different Sizes)
+
+    >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    array([[13, 16]])
+
+Test Case 3: m_a is Not a List
+
+    >>> lazy_matrix_mul({'a': 1, 'b': '2'}, [[1, 2]])
+    IndexError: new m_a must be a list
+    
+Test Case 4: m_b is Not a List
+
+    >>> lazy_matrix_mul([[1, 2]], {'a': 1, 'b': '2'})
+    IndexError: new m_b must be a list
+     
+Test Case 5: m_a is Not a List of Lists
+
+    >>> lazy_matrix_mul([[1, 2.68], "Breakfast", 1], [[1, 2]])
+    IndexError: new m_a must be a list of lists
+
+Test Case 6: m_b is Not a List of Lists
+
+    >>> lazy_matrix_mul([[1, 2]], [[1, 2.68], "Breakfast", 1])
+    IndexError: new m_b must be a list of lists
+
+Test Case 7: Empty m_a
+
+    >>> lazy_matrix_mul([[]], [[1, 2.68]])
+    IndexError: new m_a can't be empty
+
+Test Case 8: Empty m_b
+
+    >>> lazy_matrix_mul([[1, 2.68]], [[]])
+    IndexError: new m_b can't be empty
+
+Test Case 9: Non-Integer or Non-Float Elements in m_a
+
+    >>> lazy_matrix_mul([['a', 2]], [[1, 4], [5, 2]])
+    IndexError: new m_a should contain only integers or floats
+
+Test Case 10: Non-Integer or Non-Float Elements in m_b
+
+    >>> lazy_matrix_mul([[1, 2]], [['a', 4], [5, 'b']])
+    IndexError: new m_b should contain only integers or floats
+
+Test Case 11: Rows in m_a of Different Sizes
+
+    >>> lazy_matrix_mul([[1, 2, 6], [3, 7, 9]], [[3, 4], [5, 6]])
+    IndexError: new each row of m_a must be of the same size
+
+Test Case 12: Rows in m_b of Different Sizes
+
+    >>> lazy_matrix_mul([[[1, 2], [3, 7]], [[3, 4, 5], [5, 6, 7]])
+    IndexError: new each row of m_b must be of the same size
+
+Test Case 13: Matrices Cannot Be Multiplied
+
+    >>> lazy_matrix_mul([[1, 2]], [[5, 6]])
+    IndexError: new m_a and m_b can't be multiplied
+
+
+Pycodestyle Style Check:
+
+1. Check for Pycodestyle compliance:
+
+    >>> import os
+    >>> os.popen("pycodestyle 101-lazy_matrix_mul.py").read()
+    ''
+

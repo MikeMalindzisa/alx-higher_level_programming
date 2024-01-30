@@ -1,0 +1,39 @@
+Tests for a function that prints a text with 2 new lines after each of these characters: ., ? and :
+
+Import the function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    
+Test Case 1: Single Sentence with No Indentation:
+
+    >>> text_indentation("Do hard things.")
+    Do hard things.
+    <BLANKLINE>
+
+Test Case 2: Single Sentence with No Indentation:
+
+    >>> text_indentation("Are you ready?")
+    Are you ready?
+    <BLANKLINE>
+
+Test Case 3: None Input:
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test Case 4: List Input:
+
+    >>> text_indentation([1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+
+Pycodestyle Style Check:
+
+1. Check for Pycodestyle compliance:
+
+    >>> import os
+    >>> os.popen("pycodestyle 5-text_indentation.py").read()
+    ''
+
