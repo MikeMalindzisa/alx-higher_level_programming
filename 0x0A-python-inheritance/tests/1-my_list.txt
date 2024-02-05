@@ -1,0 +1,62 @@
+>>> import os
+>>> from import_check import check_for_imports
+>>> MyList  = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+# Test 0: Check module-level documentation
+>>> len(__import__("1-my_list").__doc__) > 10
+True
+
+# Test 1: Check function-level documentation
+>>> len(__import__("1-my_list").MyList.print_sorted.__doc__) > 10
+True
+
+# Test 2: Check pycodestyle style
+>>> os.popen("pycodestyle 1-my_list.py").read()
+''
+
+# Test 3: Check for a newline at the end of the file
+>>> os.popen("cat -e 1-my_list.py | tail -1").read()[-1]
+'\n'
+
+# Test 4: Check for the shebang in the file
+>>> os.popen("cat 1-my_list.py | head -1").read()
+'#!/usr/bin/python3\n'
+
+# Test 5: Check for module imports
+>>> check_for_imports()
+False
+
+# Test 6: Functionality check - MyList class
+>>> my_list = MyList()
+>>> print(my_list)  # Check initial state
+[]
+>>> my_list.print_sorted()  # Check print_sorted() method on an empty list
+[]
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+
+>>> print(my_list)  # Check list after appending values
+[1, 4, 2, 3, 5]
+
+>>> my_list.print_sorted()  # Check print_sorted() after appending values
+[1, 2, 3, 4, 5]
+
+>>> print(my_list)  # Check list after sorting
+[1, 4, 2, 3, 5]
+
+>>> my_list.append(-5)  # Add negative value
+>>> my_list.append(0)  # Add zero
+
+>>> print(my_list)  # Check list after appending negative and zero
+[1, 4, 2, 3, 5, -5, 0]
+
+>>> my_list.print_sorted()  # Check print_sorted() after appending negative and zero
+[-5, 0, 1, 2, 3, 4, 5]
+
+>>> print(my_list)  # Check list after sorting
+[1, 4, 2, 3, 5, -5, 0]
+
