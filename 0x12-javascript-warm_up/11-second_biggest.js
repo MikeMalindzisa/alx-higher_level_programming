@@ -1,13 +1,13 @@
 #!/usr/bin/node
-function secondBiggest (args) {
-  if (args.length <= 2) {
-    return 0;
-  }
-  let max = Number.MIN_SAFE_INTEGER;
-  let secondMax = Number.MIN_SAFE_INTEGER;
 
-  for (let i = 2; i < args.length; i++) {
-    const num = parseInt(args[i]);
+if (!process.argv[2] || !process.argv[3]) {
+  console.log(0);
+} else {
+  let max = Number(process.argv[2]);
+  let secondMax = Number(process.argv[3]);
+
+  for (let i = 2; i < process.argv.length; i++) {
+    const num = Number(process.argv[i]);
     if (num > max) {
       secondMax = max;
       max = num;
@@ -16,9 +16,5 @@ function secondBiggest (args) {
     }
   }
 
-  return secondMax;
+  console.log(secondMax);
 }
-
-const args = process.argv;
-
-console.log(secondBiggest(args));
