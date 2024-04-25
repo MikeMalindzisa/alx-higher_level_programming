@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This is a module that contains functions for
 finding peaks in lists of integers."""
 
