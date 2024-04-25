@@ -1,4 +1,6 @@
-"""This is a module that contains functions for finding peaks in lists of integers."""
+"""This is a module that contains functions for
+finding peaks in lists of integers."""
+
 
 def find_peak(list_of_integers):
     """Find a peak in a list of unsorted integers.
@@ -7,7 +9,8 @@ def find_peak(list_of_integers):
         list_of_integers (list): A list of unsorted integers.
 
     Returns:
-        int or None: The peak element in the list. If the list is empty, returns None.
+        int or None: The peak element in the list.
+        If the list is empty, returns None.
 
     Note:
         There may be more than one peak in the list.
@@ -27,4 +30,3 @@ def find_peak(list_of_integers):
             low = mid + 1
 
     return list_of_integers[low]
-
