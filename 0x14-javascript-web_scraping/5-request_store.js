@@ -8,11 +8,13 @@ const fileName = process.argv[3];
 const fileStream = fs.createWriteStream(fileName);
 
 fileStream.on('error', (err) => {
- 	fileStream.close();
+  console.error(err);
+  fileStream.close();
 });
 
 request(endpoint)
   .on('error', (err) => {
+    console.error(err);
     fileStream.close();
     fs.unlinkSync(fileName);
   })
