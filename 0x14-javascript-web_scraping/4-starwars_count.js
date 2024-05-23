@@ -7,7 +7,7 @@ request(url, function (err, response, body) {
     console.error(err);
     return;
   }
-  
+
   let count = 0;
   const data = JSON.parse(body);
   for (const result of data.results) {
@@ -15,6 +15,6 @@ request(url, function (err, response, body) {
       count++;
     }
   }
-  
+
   console.log(count);
 });
